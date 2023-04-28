@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 plt.close('all')
 
@@ -33,6 +34,19 @@ ax.scatter(D2[8,0], D2[8,1], D2[8,2], marker='v', s=40,  color='blue') # Step2
 ax.plot(s1_40x, s2_40x, s3_40x, marker='.',color='red', label='40x')
 ax.scatter(D3[0,0], D3[0,1], D3[0,2], marker='s', s=30,  color='red') # Step10
 ax.scatter(D3[8,0], D3[8,1], D3[8,2], marker='v', s=40,  color='red') # Step2
+
+r = 1
+theta_1_0 = np.linspace(0, 2*np.pi, 400)
+theta_2_0 = np.linspace(0, 2*np.pi, 400)
+theta_1, theta_2 = np.meshgrid(theta_1_0, theta_2_0)
+x = np.cos(theta_2)*np.sin(theta_1) * r
+y = np.sin(theta_2)*np.sin(theta_1) * r
+z = np.cos(theta_1) * r
+
+ax.plot_surface(x,y,z, alpha=0.2)
+plt.xlim([-1,1])
+plt.ylim([1,-1])
+ax.set_zlim([-1,1])
 
 ax.set_title('20230425(■:step10, ▲:step2)')
 
