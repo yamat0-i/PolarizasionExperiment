@@ -8,9 +8,9 @@ class Plot3D(object):
         self.date = date
 
     def load_and_plot(self, fignumber):
-        D1 = np.loadtxt('{}/{}_5x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
-        D2 = np.loadtxt('{}/{}_10x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
-        D3 = np.loadtxt('{}/{}_40x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
+        D1 = np.loadtxt('data\\{}\\{}_5x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
+        D2 = np.loadtxt('data\\{}\\{}_10x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
+        D3 = np.loadtxt('data\\{}\\{}_40x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
 
         s1_5x = D1[:,0]
         s2_5x = D1[:,1]
@@ -50,9 +50,9 @@ class Plot3D(object):
         plt.show()
 
     def load_and_plot_PS(self, fignumber):
-        D1 = np.loadtxt('{}/{}_5x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
-        D2 = np.loadtxt('{}/{}_10x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
-        D3 = np.loadtxt('{}/{}_40x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
+        D1 = np.loadtxt('data\\{}\\{}_5x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
+        D2 = np.loadtxt('data\\{}\\{}_10x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
+        D3 = np.loadtxt('data\\{}\\{}_40x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
 
         s1_5x = D1[:,0]
         s2_5x = D1[:,1]
