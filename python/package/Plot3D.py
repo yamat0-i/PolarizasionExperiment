@@ -11,19 +11,13 @@ class Plot3D(object):
         s1 = D[:,0]
         s2 = D[:,1]
         s3 = D[:,2]
-        s1_10 = D[0, 0]
-        s2_10 = D[0, 1]
-        s3_10 = D[0, 2]
-        s1_2 = D[8, 0]
-        s2_2 = D[8, 1]
-        s3_2 = D[8, 2]
         
         self.fignumber = fignumber
         fig = plt.figure(self.fignumber)
         ax = fig.add_subplot(projection='3d')
         ax.plot(s1, s2, s3, marker='.', color='green', label='5x')
-        ax.scatter(s1_10, s2_10, s3_10, marker='s', s=20,  color='green') # Step10
-        ax.scatter(s1_2, s2_2, s3_2, marker='v', s=30,  color='green') # Step2
+        ax.scatter(D[0,0], D[0,1], D[0,2], marker='s', s=30,  color='green') # Step10
+        ax.scatter(D[8, 0], D[8, 1], D[8, 2], marker='v', s=40,  color='green') # Step2
 
         ax.set_title(self.fname)
 
