@@ -43,7 +43,7 @@ x = np.cos(theta_2)*np.sin(theta_1) * r
 y = np.sin(theta_2)*np.sin(theta_1) * r
 z = np.cos(theta_1) * r
 
-ax.plot_surface(x,y,z, alpha=0.2)
+ax.plot_wireframe(x,y,z, color='lightskyblue', linewidth=0.5)
 plt.xlim([-1,1])
 plt.ylim([1,-1])
 ax.set_zlim([-1,1])
