@@ -1,4 +1,5 @@
 # Polarization Experiment
+# Step 10 -> 2
 # s1 s2 s3
 -0.25, 0.93, -0.25
 -0.16, 0.89, -0.42
