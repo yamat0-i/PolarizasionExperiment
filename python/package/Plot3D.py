@@ -74,7 +74,7 @@ class Plot3D(object):
         s3_40x = D3[:,2]
 
         fig = plt.figure(fignumber)
-        ax = fig.add_subplot(projection='3d')
+        ax = fig.add_subplot(111, projection='3d')
 
         ax.plot(s1_5x, s2_5x, s3_5x, marker='.', color='green', label='5x')
         ax.scatter(D1[0,0], D1[0,1], D1[0,2], marker='s', s=30,  color='green') # Step10
@@ -102,6 +102,7 @@ class Plot3D(object):
         plt.xlim([-1,1])
         plt.ylim([1,-1])
         ax.set_zlim([-1,1])
+        ax.set_aspect('equal')
 
 
         ax.set_title('{}(■:step10, ▲:step2)'.format(self.date))
