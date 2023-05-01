@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
 
 class Plot3D(object):
@@ -8,6 +7,10 @@ class Plot3D(object):
         self.date = date
 
     def load_and_plot(self, fignumber):
+        """Plot S-parameters in 3D.
+
+        fignumber: Specify the figure number.
+        """
         D1 = np.loadtxt('data\\{}\\{}_5x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
         D2 = np.loadtxt('data\\{}\\{}_10x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
         D3 = np.loadtxt('data\\{}\\{}_40x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
@@ -50,6 +53,10 @@ class Plot3D(object):
         plt.show()
 
     def load_and_plot_PS(self, fignumber):
+        """Plot S-parameters on Poincare sphere.
+
+        fignumber: Specify the figure number.
+        """
         D1 = np.loadtxt('data\\{}\\{}_5x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
         D2 = np.loadtxt('data\\{}\\{}_10x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
         D3 = np.loadtxt('data\\{}\\{}_40x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
@@ -81,6 +88,8 @@ class Plot3D(object):
         ax.scatter(D3[0,0], D3[0,1], D3[0,2], marker='s', s=30,  color='red') # Step10
         ax.scatter(D3[8,0], D3[8,1], D3[8,2], marker='v', s=40,  color='red') # Step2
 
+
+        # Poincare sphere
         r = 1
         theta_1_0 = np.linspace(0, 2*np.pi, 400)
         theta_2_0 = np.linspace(0, 2*np.pi, 400)
@@ -93,6 +102,7 @@ class Plot3D(object):
         plt.xlim([-1,1])
         plt.ylim([1,-1])
         ax.set_zlim([-1,1])
+
 
         ax.set_title('{}(■:step10, ▲:step2)'.format(self.date))
 
