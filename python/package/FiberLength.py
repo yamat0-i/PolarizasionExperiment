@@ -7,6 +7,12 @@ class measure_length(object):
         self.date = date
 
     def measure(self):
+        """Examine the thinnest part of fiber.
+
+        X: Absolute position
+        y1: Upper edge of fiber
+        y2: Lower edge of fiber
+        """
         D = np.loadtxt('data\\{}\\FiberLength_{}.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
 
         X = D[:,0]
