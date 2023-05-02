@@ -1,4 +1,4 @@
-# Fiber Length
+# Fiber Diameter
 # X: Absolute position, y1:Upper edge, y2: Lower edge
 # X, y1, y2
 14976, 645, 667
