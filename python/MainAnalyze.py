@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from package.FiberLength import measure_length
+from package.FiberMeasure import measure
 from package.Plot3D import Plot3D
 
 #Clean Up
@@ -10,8 +10,8 @@ PE20230501 = Plot3D("20230501")
 PE20230501.load_and_plot(1)
 PE20230501.load_and_plot_PS(2)
 
-FL20230502 = measure_length("20230502")
-FL20230502.measure()
+FL20230502 = measure("20230502")
+FL20230502.measure_diameter()
 
 
 # PE20230424 = Plot3D("20230424")
