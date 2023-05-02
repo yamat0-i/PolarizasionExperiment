@@ -31,6 +31,6 @@ class measure(object):
 
         plt.xlabel('X absolute position')
         plt.ylabel('diameter[px]')
-        plt.title('{}_FiberDiameter'.format(self.date))
+        plt.title('FiberDiameter_{}'.format(self.date))
 
         plt.show()

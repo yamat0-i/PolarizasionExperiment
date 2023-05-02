@@ -1,7 +1,18 @@
+"""
+This script is intended for the analysis of polarization control experiments.
+
+Please run in the 'python' directory where this file exists.
+"""
+
+import os
+
 import matplotlib.pyplot as plt
 
 from package.FiberMeasure import measure
 from package.Plot3D import Plot3D
+
+#Check CD
+
 
 #Clean Up
 plt.close('all')
