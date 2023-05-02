@@ -1,4 +1,6 @@
-# x y1 y2
+# Fiber Length
+# X: Absolute position, y1:Upper edge, y2: Lower edge
+# X, y1, y2
 14976, 645, 667
 14476, 645, 665
 13976, 647, 662
