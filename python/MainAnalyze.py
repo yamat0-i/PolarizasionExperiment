@@ -6,8 +6,13 @@ from package.Plot3D import Plot3D
 #Clean Up
 plt.close('all')
 
+PE20230501 = Plot3D("20230501")
+PE20230501.load_and_plot(1)
+PE20230501.load_and_plot_PS(2)
+
 FL20230502 = measure_length("20230502")
 FL20230502.measure()
+
 
 # PE20230424 = Plot3D("20230424")
 # PE20230424.load_and_plot(1)
