@@ -13,7 +13,7 @@ class measure(object):
         y1: Upper edge of fiber
         y2: Lower edge of fiber
         """
-        D = np.loadtxt('data\\{}\\FiberLength_{}.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
+        D = np.loadtxt('data\\{}\\FiberDiameter_{}.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
 
         X = D[:,0]
         y1 = D[:,1]
