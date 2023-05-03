@@ -3,24 +3,25 @@ import matplotlib.pyplot as plt
 
 
 class Plot3D(object):
-    def __init__(self, main_dir, date):
-        self.main_dir = main_dir
-        self.date = date
-        self.data_dir = "{}\\data\\{}".format(self.main_dir, self.date)
+    def __init__(self, main_dir, date, data_dir, date_dir):
+       self.main_dir = main_dir
+       self.date = date
+       self.data_dir = data_dir
+       self.date_dir = date_dir
 
     def load_and_plot(self):
         """Plot S-parameters in 3D.
         """
         D1 = np.loadtxt(
-            '{}\\{}_5x.txt'.format(self.data_dir, self.date), 
+            '{}\\{}_5x.txt'.format(self.date_dir, self.date), 
             delimiter=',',  skiprows=3
             )
         D2 = np.loadtxt(
-            '{}\\{}_10x.txt'.format(self.data_dir, self.date), 
+            '{}\\{}_10x.txt'.format(self.date_dir, self.date), 
             delimiter=',',  skiprows=3
             )
         D3 = np.loadtxt(
-            '{}\\{}_40x.txt'.format(self.data_dir, self.date), 
+            '{}\\{}_40x.txt'.format(self.date_dir, self.date), 
             delimiter=',',  skiprows=3
             )
 
@@ -65,15 +66,15 @@ class Plot3D(object):
         """Plot S-parameters on Poincare sphere.
         """
         D1 = np.loadtxt(
-            '{}\\{}_5x.txt'.format(self.data_dir, self.date), 
+            '{}\\{}_5x.txt'.format(self.date_dir, self.date), 
             delimiter=',',  skiprows=3
             )
         D2 = np.loadtxt(
-            '{}\\{}_10x.txt'.format(self.data_dir, self.date), 
+            '{}\\{}_10x.txt'.format(self.date_dir, self.date), 
             delimiter=',',  skiprows=3
             )
         D3 = np.loadtxt(
-            '{}\\{}_40x.txt'.format(self.data_dir, self.date), 
+            '{}\\{}_40x.txt'.format(self.date_dir, self.date), 
             delimiter=',',  skiprows=3
             )
         s1_5x = D1[:,0]

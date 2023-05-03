@@ -3,9 +3,11 @@ import matplotlib.pyplot as plt
 
 
 class measure(object):
-    def __init__(self, main_dir, date):
+    def __init__(self, main_dir, date, data_dir, date_dir):
         self.main_dir = main_dir
         self.date = date
+        self.data_dir = data_dir
+        self.date_dir = date_dir
 
     def measure_diameter(self):
         """Examine the thinnest part of fiber.
@@ -15,9 +17,8 @@ class measure(object):
         y2: Lower edge of fiber
         """
 
-        data_dir = "{}\\data\\{}".format(self.main_dir, self.date)
         D = np.loadtxt(
-            '{}\\FiberDiameter_{}.txt'.format(data_dir, self.date), 
+            '{}\\FiberDiameter_{}.txt'.format(self.date_dir, self.date), 
             delimiter=',',  skiprows=3
             )
 
