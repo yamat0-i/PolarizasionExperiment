@@ -3,17 +3,26 @@ import matplotlib.pyplot as plt
 
 
 class Plot3D(object):
-    def __init__(self, date):
+    def __init__(self, main_dir, date):
+        self.main_dir = main_dir
         self.date = date
+        self.data_dir = "{}\\data\\{}".format(self.main_dir, self.date)
 
-    def load_and_plot(self, fignumber):
+    def load_and_plot(self):
         """Plot S-parameters in 3D.
-
-        fignumber: Specify the figure number.
         """
-        D1 = np.loadtxt('data\\{}\\{}_5x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
-        D2 = np.loadtxt('data\\{}\\{}_10x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
-        D3 = np.loadtxt('data\\{}\\{}_40x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
+        D1 = np.loadtxt(
+            '{}\\{}_5x.txt'.format(self.data_dir, self.date), 
+            delimiter=',',  skiprows=3
+            )
+        D2 = np.loadtxt(
+            '{}\\{}_10x.txt'.format(self.data_dir, self.date), 
+            delimiter=',',  skiprows=3
+            )
+        D3 = np.loadtxt(
+            '{}\\{}_40x.txt'.format(self.data_dir, self.date), 
+            delimiter=',',  skiprows=3
+            )
 
         s1_5x = D1[:,0]
         s2_5x = D1[:,1]
@@ -27,7 +36,7 @@ class Plot3D(object):
         s2_40x = D3[:,1]
         s3_40x = D3[:,2]
 
-        fig = plt.figure(fignumber)
+        fig = plt.figure()
         ax = fig.add_subplot(projection='3d')
 
         ax.plot(s1_5x, s2_5x, s3_5x, marker='.', color='green', label='5x')
@@ -52,15 +61,21 @@ class Plot3D(object):
 
         plt.show()
 
-    def load_and_plot_PS(self, fignumber):
+    def load_and_plot_PS(self):
         """Plot S-parameters on Poincare sphere.
-
-        fignumber: Specify the figure number.
         """
-        D1 = np.loadtxt('data\\{}\\{}_5x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
-        D2 = np.loadtxt('data\\{}\\{}_10x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
-        D3 = np.loadtxt('data\\{}\\{}_40x.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
-
+        D1 = np.loadtxt(
+            '{}\\{}_5x.txt'.format(self.data_dir, self.date), 
+            delimiter=',',  skiprows=3
+            )
+        D2 = np.loadtxt(
+            '{}\\{}_10x.txt'.format(self.data_dir, self.date), 
+            delimiter=',',  skiprows=3
+            )
+        D3 = np.loadtxt(
+            '{}\\{}_40x.txt'.format(self.data_dir, self.date), 
+            delimiter=',',  skiprows=3
+            )
         s1_5x = D1[:,0]
         s2_5x = D1[:,1]
         s3_5x = D1[:,2]
@@ -73,7 +88,7 @@ class Plot3D(object):
         s2_40x = D3[:,1]
         s3_40x = D3[:,2]
 
-        fig = plt.figure(fignumber)
+        fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
 
         ax.plot(s1_5x, s2_5x, s3_5x, marker='.', color='green', label='5x')

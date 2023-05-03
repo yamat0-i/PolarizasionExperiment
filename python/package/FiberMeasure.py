@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 
 
 class measure(object):
-    def __init__(self, date):
+    def __init__(self, main_dir, date):
+        self.main_dir = main_dir
         self.date = date
 
     def measure_diameter(self):
@@ -13,7 +14,12 @@ class measure(object):
         y1: Upper edge of fiber
         y2: Lower edge of fiber
         """
-        D = np.loadtxt('data\\{}\\FiberDiameter_{}.txt'.format(self.date, self.date), delimiter=',',  skiprows=3)
+
+        data_dir = "{}\\data\\{}".format(self.main_dir, self.date)
+        D = np.loadtxt(
+            '{}\\FiberDiameter_{}.txt'.format(data_dir, self.date), 
+            delimiter=',',  skiprows=3
+            )
 
         X = D[:,0]
         y1 = D[:,1]
