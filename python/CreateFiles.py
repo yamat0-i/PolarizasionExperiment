@@ -1,27 +1,22 @@
 import os
 
-main_dir = os.path.dirname(__file__)
+MAIN_DIR = os.path.dirname(__file__)
 date = input("Please enter the date.\n")
-data_dir = "{}\\data".format(main_dir)
-date_dir = "{}\\{}".format(data_dir, date)
+DATA_DIR = "{}\\data".format(MAIN_DIR)
+date_dir = "{}\\{}".format(DATA_DIR, date)
 
-#File Check
-def file_check():
-    is_date_dir = os.path.exists(date_dir)
-    is_FD_data = os.path.exists("{}\\FiberDiameter_{}.txt".format(date_dir, date))
-    is_PE_5x_data = os.path.exists("{}\\{}_5x.txt".format(date_dir, date))
-    is_PE_10x_data = os.path.exists("{}\\{}_10x.txt".format(date_dir, date))
-    is_PE_40x_data = os.path.exists("{}\\{}_40x.txt".format(date_dir, date))
-
+def create_files():
     # create dir
-    if is_date_dir == True:
+    exists_date_dir = os.path.exists(date_dir)
+    if exists_date_dir == True:
         pass
     else:
         os.makedirs(date_dir)
         print("Create: '{}'".format(date_dir))
 
     # create files
-    if is_FD_data == True:
+    existsFD_DATA = os.path.exists("{}\\FiberDiameter_{}.txt".format(date_dir, date))
+    if existsFD_DATA == True:
         pass
     else:
         fname = "{}\\FiberDiameter_{}.txt".format(date_dir, date)
@@ -33,8 +28,10 @@ def file_check():
                 )
             f.write(FD_format)
         print("Create: {}".format(fname))
-
-    if is_PE_5x_data == True:
+    
+    
+    exists_PE_5x_data = os.path.exists("{}\\{}_5x.txt".format(date_dir, date))
+    if exists_PE_5x_data == True:
         pass
     else:
         fname = "{}\\{}_5x.txt".format(date_dir, date)
@@ -46,8 +43,10 @@ def file_check():
                 )
             f.write(PE_5x_format)
         print("Create: {}".format(fname))
-
-    if is_PE_10x_data == True:
+    
+    
+    exists_PE_10x_data = os.path.exists("{}\\{}_10x.txt".format(date_dir, date))
+    if exists_PE_10x_data == True:
         pass
     else:
         fname = "{}\\{}_10x.txt".format(date_dir, date)
@@ -60,7 +59,9 @@ def file_check():
             f.write(PE_10x_format)
         print("Create: {}".format(fname))
     
-    if is_PE_40x_data == True:
+    
+    exists_PE_40x_data = os.path.exists("{}\\{}_40x.txt".format(date_dir, date))
+    if exists_PE_40x_data == True:
         pass
     else:
         fname = "{}\\{}_40x.txt".format(date_dir, date)
@@ -79,4 +80,4 @@ def file_check():
         )
 
 
-file_check()
+create_files()

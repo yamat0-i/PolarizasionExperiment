@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 
 class Plot3D(object):
-    def __init__(self, main_dir, date, data_dir, date_dir):
-       self.main_dir = main_dir
+    def __init__(self, MAIN_DIR, date, DATA_DIR, date_dir):
+       self.MAIN_DIR = MAIN_DIR
        self.date = date
-       self.data_dir = data_dir
+       self.DATA_DIR = DATA_DIR
        self.date_dir = date_dir
 
     def load_and_plot(self):
