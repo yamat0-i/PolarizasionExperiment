@@ -16,6 +16,6 @@ plt.close('all') # Clean Up
 FD = measure(main_dir, date, data_dir, date_dir)
 FD.measure_diameter()
 
-PE = Plot3D(main_dir, date, data_dir, date_dir)
-PE.load_and_plot()
-PE.load_and_plot_PS()
+# PE = Plot3D(main_dir, date, data_dir, date_dir)
+# PE.load_and_plot()
+# PE.load_and_plot_PS()
