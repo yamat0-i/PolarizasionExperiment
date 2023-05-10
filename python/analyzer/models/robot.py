@@ -35,7 +35,7 @@ class Analyzer(object):
             ).ask()
         if what_to_do == "Fiber Diameter":
             fiber_measure.main()
-        if what_to_do == "Analyze":
+        if what_to_do == "S Parameter":
             s_parameter.main()
     
     def goodbye(self):
