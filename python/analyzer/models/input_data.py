@@ -8,7 +8,7 @@ def main():
     DATE_DIR_PATH = get_DATE_DIR_PATH(date)
     is_DATE_DIR_existed(date_dir_path=DATE_DIR_PATH)
     create_files(
-        fname="{}\\FiberDiameter_{}.txt".format(DATE_DIR_PATH, date),
+        fname="{}\\{}_FiberDiameter.txt".format(DATE_DIR_PATH, date),
         temp_file='diameter.txt',
         lensX=''
         )

@@ -48,7 +48,7 @@ def measure_diameter(date_dir_path, date):
         """
 
         D = np.loadtxt(
-            '{}\\FiberDiameter_{}.txt'.format(date_dir_path, date), 
+            '{}\\{}_FiberDiameter.txt'.format(date_dir_path, date), 
             delimiter=',',  skiprows=3
             )
 
