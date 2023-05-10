@@ -18,7 +18,7 @@ class Analyzer(object):
         
     def menu(self):
         what_to_do = questionary.select(
-            "What do you want to do?", 
+            "Select mode.", 
             choices=["Input", "Analyze"],
             ).ask()
         if what_to_do == "Input":
