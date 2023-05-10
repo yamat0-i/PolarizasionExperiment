@@ -1,1 +1,1 @@
-$robot_name: Hello, user. 
+{robot_name}: Hello, user. 

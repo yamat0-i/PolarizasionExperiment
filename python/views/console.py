@@ -4,8 +4,6 @@ import string
 
 from pathlib import Path
 
-import termcolor
-
 
 def get_TEMPLATE_DIR_PATH():
     """Return the path of the template's directory.
@@ -49,7 +47,7 @@ def find_template(temp_file):
     return temp_file_path
 
 
-def get_template(template_file_path, color=None):
+def get_template(template_file_path):
     """Return the path of the template.
 
     Args:
@@ -63,8 +61,10 @@ def get_template(template_file_path, color=None):
     template = find_template(template_file_path)
     with open(template, 'r', encoding='utf-8') as template_file:
         contents = template_file.read()
-        contents = contents.rstrip(os.linesep)
-        contents = '{splitter}{sep}{contents}{sep}{splitter}{sep}'.format(
-            contents=contents, splitter="=" * 60, sep=os.linesep)
-        contents = termcolor.colored(contents, color)
-        return string.Template(contents)
+        return contents
+
+def get_datafile_template(template_file_path):
+    template = find_template(template_file_path)
+    with open(template, 'r') as template_file:
+        contents = template_file.read()
+        return contents
