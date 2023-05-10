@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from views import console
+from analyzer.views import console
 
 def main():
     date = _input_date()    
@@ -43,7 +43,7 @@ def _get_DATA_DIR_PATH():
 
     if not DATA_DIR_PATH:
         MODELS_DIR = Path(os.path.dirname(__file__))
-        BASE_DIR = Path(MODELS_DIR.parent)
+        BASE_DIR = Path(MODELS_DIR.parents[1])
         DATA_DIR_PATH = os.path.join(BASE_DIR, 'data')
 
     return DATA_DIR_PATH

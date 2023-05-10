@@ -1,3 +1,0 @@
-# Polarization Experiment
-# Step 10 -> 2, lens:10x
-# s1 s2 s3

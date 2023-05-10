@@ -1,4 +1,3 @@
-from controller import controller
+from analyzer.controller import controller
 
 controller.controller()
-
