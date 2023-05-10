@@ -78,6 +78,6 @@ def create_files(fname, temp_file, lensX):
 def say_is_completed():
     print(
         "Creating files has been completed.\n"
-        "Input data."
+        "Please input data."
         )
 

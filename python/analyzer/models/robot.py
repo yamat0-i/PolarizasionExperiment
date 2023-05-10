@@ -1,7 +1,8 @@
 import questionary
 
 from analyzer.models import input_data
-from analyzer.models import analyze
+from analyzer.models import fiber_measure
+from analyzer.models import s_parameter
 from analyzer.views import console
 
 DEFAULT_ROBOT_NAME = 'Analyzer'
@@ -24,7 +25,18 @@ class Analyzer(object):
         if what_to_do == "Input":
             input_data.main()
         if what_to_do == "Analyze":
-            analyze.main()
+            self.menu_2()
+
+    def menu_2(self):
+        what_to_do = questionary.select(
+            "Select one to analyze.", 
+            choices=["Fiber Diameter", 
+                     "S Parameter"],
+            ).ask()
+        if what_to_do == "Fiber Diameter":
+            fiber_measure.main()
+        if what_to_do == "Analyze":
+            s_parameter.main()
     
     def goodbye(self):
         temp_goodbye = console.get_template('goodbye.txt')
