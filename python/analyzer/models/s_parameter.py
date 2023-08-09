@@ -76,6 +76,8 @@ def load_and_plot_Sparam(date_dir_path, date):
     # Plot
     fig = plt.figure()
 
+    plt.subplots_adjust(hspace=0.3)
+
     ax1 = fig.add_subplot(3, 1, 1)
     ax1.invert_xaxis()
     ax1.plot(step, s1_5x, color='green', label='5x')
