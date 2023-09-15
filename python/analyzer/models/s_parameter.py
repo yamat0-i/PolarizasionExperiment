@@ -83,8 +83,9 @@ def load_and_plot_Sparam(date_dir_path, date):
     ax1.plot(step, s1_5x, color='green', label='5x')
     ax1.plot(step, s1_10x, color='blue', label='10x')
     ax1.plot(step, s1_40x, color='red', label='40x')
-    ax1.set_xlabel('step')
-    ax1.set_ylabel('s1')
+    ax1.set_ylim(-0.2, 0.7)
+    ax1.set_xlabel('Step size [deg]', fontsize=18)
+    ax1.set_ylabel('s1', fontsize=18)
     ax1.legend(loc=(0.1, 0.1))
 
     ax2 = fig.add_subplot(3, 1, 2)
@@ -92,8 +93,9 @@ def load_and_plot_Sparam(date_dir_path, date):
     ax2.plot(step, s2_5x, color='green', label='5x')
     ax2.plot(step, s2_10x, color='blue', label='10x')
     ax2.plot(step, s2_40x, color='red', label='40x')
-    ax2.set_xlabel('step')
-    ax2.set_ylabel('s2')
+    ax2.set_ylim(0.2, 1.1)
+    ax2.set_xlabel('Step size [deg]', fontsize=18)
+    ax2.set_ylabel('s2', fontsize=18)
     ax2.legend(loc=(0.1, 0.1))
 
     ax3 = fig.add_subplot(3, 1, 3)
@@ -101,9 +103,12 @@ def load_and_plot_Sparam(date_dir_path, date):
     ax3.plot(step, s3_5x, color='green', label='5x')
     ax3.plot(step, s3_10x, color='blue', label='10x')
     ax3.plot(step, s3_40x, color='red', label='40x')
-    ax3.set_xlabel('step')
-    ax3.set_ylabel('s3')
+    ax3.set_ylim(-0.3, 0.6)
+    ax3.set_xlabel('Step size [deg]', fontsize=18)
+    ax3.set_ylabel('s3', fontsize=18)
     ax3.legend(loc=(0.1, 0.1))
+
+    plt.title('Stokes Parameter')
 
     plt.show()
 
@@ -188,9 +193,9 @@ def load_and_plot_PS(date_dir_path, date):
 
     ax.set_title('{}(■:step10, ▲:step2)'.format(date))
 
-    ax.set_xlabel('s1')
-    ax.set_ylabel('s2')
-    ax.set_zlabel('s3')
+    ax.set_xlabel('s1', fontsize=18)
+    ax.set_ylabel('s2', fontsize=18)
+    ax.set_zlabel('s3', fontsize=18)
 
     ax.tick_params(axis='x', labelsize=8)
     ax.tick_params(axis='y', labelsize=8)
